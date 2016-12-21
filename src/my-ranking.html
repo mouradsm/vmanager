@@ -1,0 +1,114 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="../bower_components/vaadin-core-elements/vaadin-core-elements.html">
+
+<dom-module id="my-ranking">
+    <template>
+        <!--<style include="shared-styles">-->
+            <!--:host {-->
+                <!--display: block;-->
+
+                <!--padding: 10px;-->
+            <!--}-->
+        <!--</style>-->
+        <vaadin-grid selection-mode="disabled">
+            <table>
+                <!-- Define the columns and their mapping to data properties. -->
+                <colgroup>
+                    <col flex="1" name="jogador.position">
+                    <col flex="1" name="jogador.nome">
+                    <col flex="1" name="jogador.pt">
+                    <col flex="1" name="jogador.mm">
+                    <col flex="1" name="jogador.md">
+                </colgroup>
+                <!-- Define the column headings. -->
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>JOGADOR</th>
+                    <th>PT</th>
+                    <th>M.M</th>
+                    <th>M.D</th>
+                </tr>
+                </thead>
+            </table>
+        </vaadin-grid>
+
+    </template>
+
+    <script>
+
+        Polymer({
+            is: 'my-ranking',
+
+            properties: {
+            },
+
+            _itemsChange: function(items){
+               var grid = document.querySelector('vaadin-grid');
+               grid.items = this.items;
+               console.log('items: ', items);
+            },
+
+        });
+        var grid = document.querySelector('vaadin-grid');
+        grid.items = [
+            {
+                jogador: {
+                    position: 1,
+                    nome: 'Rodrigo',
+                    pt: '20',
+                    mm: '30',
+                    md: '10'
+                }
+            },
+            {
+                jogador: {
+                    position: 2,
+                    nome: 'Flávio',
+                    pt: '20',
+                    mm: '30',
+                    md: '10'
+                }
+            },
+            {
+                jogador: {
+                    position: 3,
+                    nome: 'Leandro',
+                    pt: '20',
+                    mm: '30',
+                    md: '10'
+                }
+            },
+            {
+                jogador: {
+                    position: 4,
+                    nome: 'Evandro',
+                    pt: '20',
+                    mm: '30',
+                    md: '10'
+                }
+            },
+            {
+                jogador: {
+                    position: 5,
+                    nome: 'Joãozinho',
+                    pt: '20',
+                    mm: '30',
+                    md: '10'
+                }
+            },
+        ]
+
+    </script>
+</dom-module>

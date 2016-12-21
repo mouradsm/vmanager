@@ -1,0 +1,45 @@
+<link rel="import" href="../../bower_components/paper-styles/shadow.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../../bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
+
+<dom-module id="vm-jogador">
+    <template>
+        <style>
+            :host {
+                display: block;
+                box-sizing: border-box;
+                background-color: #fafafa;
+                color: #212121;
+                padding: 1em;
+                @apply(--paper-font-common-base);
+                @apply(--shadow-elevation-2dp);
+                border-radius: 2px;
+                --iron-autogrow-textarea: {
+                    margin: 0;
+                    padding: 0;
+                    font-family: 'Roboto Slab', Times New Roman, serif;
+                    white-space: pre-wrap;
+                }
+            }
+        </style>
+        <template>
+            <input is="iron-input"
+                   bind-value="{{nome}}">
+            </input>
+        </template>
+    </template>
+    <script>
+        Polymer({
+            is: 'vm-jogador',
+
+            properties: {
+                nome: {
+                    type: String,
+                    notify: true,
+                    value: ''
+                }
+            }
+        })
+    </script>
+</dom-module>
