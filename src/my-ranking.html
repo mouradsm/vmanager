@@ -14,13 +14,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="my-ranking">
     <template>
-        <!--<style include="shared-styles">-->
-            <!--:host {-->
-                <!--display: block;-->
-
-                <!--padding: 10px;-->
-            <!--}-->
-        <!--</style>-->
         <vaadin-grid selection-mode="disabled">
             <table>
                 <!-- Define the columns and their mapping to data properties. -->
@@ -54,14 +47,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             properties: {
             },
 
-            _itemsChange: function(items){
-               var grid = document.querySelector('vaadin-grid');
-               grid.items = this.items;
-               console.log('items: ', items);
-            },
+            created: function(){
+                console.log('foi!');
+            }
 
         });
+
         var grid = document.querySelector('vaadin-grid');
+
         grid.items = [
             {
                 jogador: {
@@ -109,6 +102,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 }
             },
         ]
+
 
     </script>
 </dom-module>

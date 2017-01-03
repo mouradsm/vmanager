@@ -1,33 +1,29 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-styles/shadow.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item-body.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item-shared-styles.html">
 <link rel="import" href="../../bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
 
 <dom-module id="vm-jogador">
     <template>
-        <style>
-            :host {
-                display: block;
-                box-sizing: border-box;
-                background-color: #fafafa;
-                color: #212121;
-                padding: 1em;
-                @apply(--paper-font-common-base);
-                @apply(--shadow-elevation-2dp);
-                border-radius: 2px;
-                --iron-autogrow-textarea: {
-                    margin: 0;
-                    padding: 0;
-                    font-family: 'Roboto Slab', Times New Roman, serif;
-                    white-space: pre-wrap;
-                }
+        <style is="custom-style" include="paper-item-shared-styles">
+            paper-item {
+                background-color: white;
+                margin: 0.5rem 0 0 0;
             }
         </style>
-        <template>
-            <input is="iron-input"
-                   bind-value="{{nome}}">
-            </input>
-        </template>
+
+        <paper-item>
+            <paper-item-body two-line>
+                <div>[[nome]]</div>
+                <div secondary>Your status is visible to everyone</div>
+            </paper-item-body>
+            <iron-icon icon="warning"></iron-icon>
+        </paper-item>
     </template>
     <script>
         Polymer({
@@ -40,6 +36,9 @@
                     value: ''
                 }
             }
+
+            created: function()
+
         })
     </script>
 </dom-module>

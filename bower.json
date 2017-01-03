@@ -20,7 +20,8 @@
     "iron-icons": "^1.2.0",
     "polymerfire": "firebase/polymerfire#^0.10.3",
     "firebase": "^3.6.4",
-    "paper-fab": "^1.2.1"
+    "paper-fab": "^1.2.1",
+    "paper-item": "PolymerElements/paper-item#^1.2.1"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"
