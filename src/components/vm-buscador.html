@@ -39,7 +39,7 @@
 
             paper-icon-button {
                 --paper-icon-button: {
-                    color: var(--accent-color);
+                    color: var(--paper-blue-500);
                 }
             }
 
@@ -96,9 +96,13 @@
                 return "cancel";
             },
 
+            feedbackPositivo: function(texto) {
+                this.fire('feedback-positivo', texto)
+            },
+
             limparBusca: function () {
                 if (this.query == '') {
-                    this.feedbackPositivo('Escribe alguna cosa en el campo de texto');
+                    this.feedbackPositivo('Digite um nome para buscar!');
                 } else {
                     this.query = '';
                 }
