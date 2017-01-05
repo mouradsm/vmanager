@@ -34,21 +34,29 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     </style>
     <vm-buscador></vm-buscador>
-    <div role="listbox">
-        <vm-jogador></vm-jogador>
-    </div>
+
+    <vm-jogador
+            name="[[jogador.name]]"
+            last-visit="[[jogador.lastVisit]]">
+    </vm-jogador>
 
     <paper-fab
             icon="add"
             on-tap="create"
             aria-label="Add note">
     </paper-fab>
+
   </template>
 
   <script>
     Polymer({
       is: 'my-view1',
-
+      properties: {
+        jogador: {
+            type: Object,
+            notify: true
+        }
+      },
       create: function() {
           console.log('OPA!');
       }
